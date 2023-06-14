@@ -1,0 +1,32 @@
+$date
+	Tue Jun 13 20:16:27 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb $end
+$var wire 1 ! sopa $end
+$var wire 1 " cafe $end
+$var reg 1 # cafeBtn $end
+$var reg 1 $ dinheiro $end
+$var reg 1 % sopaBtn $end
+$scope module coffe_tb $end
+$var wire 1 " cafe $end
+$var wire 1 # cafeBtn $end
+$var wire 1 $ dinheiro $end
+$var wire 1 ! sopa $end
+$var wire 1 % sopaBtn $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0%
+1$
+1#
+1"
+0!
+$end

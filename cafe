@@ -1,0 +1,56 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000022450039db0 .scope module, "tb" "tb" 2 6;
+ .timescale 0 0;
+v000002244ff6f890_0 .net "cafe", 0 0, L_000002244fef3170;  1 drivers
+v000002244ff70790_0 .var "cafeBtn", 0 0;
+v000002244ff70330_0 .var "dinheiro", 0 0;
+v000002244ff6fe30_0 .net "sopa", 0 0, L_000002244fef2c20;  1 drivers
+v000002244ff705b0_0 .var "sopaBtn", 0 0;
+S_0000022450039f40 .scope module, "coffe_tb" "coffe" 2 10, 2 1 0, S_0000022450039db0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "cafeBtn";
+    .port_info 1 /INPUT 1 "dinheiro";
+    .port_info 2 /INPUT 1 "sopaBtn";
+    .port_info 3 /OUTPUT 1 "cafe";
+    .port_info 4 /OUTPUT 1 "sopa";
+L_0000022450039970 .functor AND 1, v000002244ff70790_0, v000002244ff705b0_0, C4<1>, C4<1>;
+L_0000022450038d00 .functor NOT 1, L_0000022450039970, C4<0>, C4<0>, C4<0>;
+L_000002244fef2f30 .functor AND 1, v000002244ff70330_0, v000002244ff70790_0, C4<1>, C4<1>;
+L_000002244fef3170 .functor AND 1, L_0000022450038d00, L_000002244fef2f30, C4<1>, C4<1>;
+L_000002244fef3370 .functor AND 1, v000002244ff70790_0, v000002244ff705b0_0, C4<1>, C4<1>;
+L_000002244fef2c20 .functor AND 1, L_000002244fef3370, v000002244ff70330_0, C4<1>, C4<1>;
+v0000022450038c60_0 .net *"_ivl_0", 0 0, L_0000022450039970;  1 drivers
+v000002244ff25bb0_0 .net *"_ivl_2", 0 0, L_0000022450038d00;  1 drivers
+v00000224500398d0_0 .net *"_ivl_4", 0 0, L_000002244fef2f30;  1 drivers
+v000002245003a0d0_0 .net *"_ivl_8", 0 0, L_000002244fef3370;  1 drivers
+v000002245003a170_0 .net "cafe", 0 0, L_000002244fef3170;  alias, 1 drivers
+v000002244fef2880_0 .net "cafeBtn", 0 0, v000002244ff70790_0;  1 drivers
+v000002244fef2920_0 .net "dinheiro", 0 0, v000002244ff70330_0;  1 drivers
+v000002244fef29c0_0 .net "sopa", 0 0, L_000002244fef2c20;  alias, 1 drivers
+v000002244fef2a60_0 .net "sopaBtn", 0 0, v000002244ff705b0_0;  1 drivers
+    .scope S_0000022450039db0;
+T_0 ;
+    %vpi_call 2 20 "$monitor", "cafeBtn=%b, dinheiro=%b, sopaBtn=%b, cafe=%b, sopa=%b ", v000002244ff70790_0, v000002244ff70330_0, v000002244ff705b0_0, v000002244ff6f890_0, v000002244ff6fe30_0 {0 0 0};
+    %vpi_call 2 21 "$dumpfile", "cafe.vcd" {0 0 0};
+    %vpi_call 2 22 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000022450039db0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v000002244ff70790_0, 0;
+    %pushi/vec4 1, 0, 1;
+    %assign/vec4 v000002244ff70330_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v000002244ff705b0_0, 0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "cafe.v";

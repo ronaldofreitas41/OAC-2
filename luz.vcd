@@ -1,0 +1,29 @@
+$date
+	Tue Jun 13 20:07:38 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb $end
+$var wire 1 ! luz $end
+$var reg 1 " cinto $end
+$var reg 1 # ignicao $end
+$var reg 1 $ motorista $end
+$scope module alarme_tb $end
+$var wire 1 " cinto $end
+$var wire 1 # ignicao $end
+$var wire 1 ! luz $end
+$var wire 1 $ motorista $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+x#
+x"
+0!
+$end

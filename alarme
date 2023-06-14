@@ -1,0 +1,48 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001721ef991b0 .scope module, "tb" "tb" 2 5;
+ .timescale 0 0;
+v000001721efe5660_0 .var "cinto", 0 0;
+v000001721efe5700_0 .var "ignicao", 0 0;
+v000001721efe57a0_0 .net "luz", 0 0, L_000001721efb2f50;  1 drivers
+v000001721efb2880_0 .var "motorista", 0 0;
+S_000001721efe5390 .scope module, "alarme_tb" "alarme" 2 9, 2 1 0, S_000001721ef991b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "motorista";
+    .port_info 1 /INPUT 1 "cinto";
+    .port_info 2 /INPUT 1 "ignicao";
+    .port_info 3 /OUTPUT 1 "luz";
+L_000001721efb3150 .functor NOT 1, v000001721efe5660_0, C4<0>, C4<0>, C4<0>;
+L_000001721efb3370 .functor AND 1, v000001721efb2880_0, L_000001721efb3150, C4<1>, C4<1>;
+L_000001721efb2f50 .functor AND 1, L_000001721efb3370, v000001721efe5700_0, C4<1>, C4<1>;
+v000001721ef98f40_0 .net *"_ivl_0", 0 0, L_000001721efb3150;  1 drivers
+v000001721ef9be60_0 .net *"_ivl_2", 0 0, L_000001721efb3370;  1 drivers
+v000001721ef99340_0 .net "cinto", 0 0, v000001721efe5660_0;  1 drivers
+v000001721ef993e0_0 .net "ignicao", 0 0, v000001721efe5700_0;  1 drivers
+v000001721efe5520_0 .net "luz", 0 0, L_000001721efb2f50;  alias, 1 drivers
+v000001721efe55c0_0 .net "motorista", 0 0, v000001721efb2880_0;  1 drivers
+    .scope S_000001721ef991b0;
+T_0 ;
+    %vpi_call 2 18 "$monitor", "motorista=%b, cinto=%b, ignicao=%b, luz=%b ", v000001721efb2880_0, v000001721efe5660_0, v000001721efe5700_0, v000001721efe57a0_0 {0 0 0};
+    %vpi_call 2 19 "$dumpfile", "luz.vcd" {0 0 0};
+    %vpi_call 2 20 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001721ef991b0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v000001721efb2880_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v000001721efb2880_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v000001721efb2880_0, 0;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "alarme.v";
